@@ -7,7 +7,6 @@
 
 import includes.stats as sts
 import os
-import platform
 
 def main():
   # Clear system
