@@ -6,13 +6,11 @@
 """
 
 import includes.stats as sts
+from includes.clear import clearSYS
 import os
-import platform
 
 def main():
-  # Clear system
-  if platform.system() == "Windows": os.system('cls')
-  else: os.system('clear')
+  clearSYS()
   
   # Call sample function
   sts.hello()
