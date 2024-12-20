@@ -10,6 +10,7 @@ an argument and returns a single number.
 """
 
 import includes.stats as stats
+from includes.clear import clearSYS
 import os
 
 def main():
