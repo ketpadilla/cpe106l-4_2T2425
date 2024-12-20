@@ -22,10 +22,10 @@ def mode(numbers):
         raise ValueError("The input list is empty")
 
     counts = Counter(numbers)
-    max_count = max(counts.value())
+    max_count = max(counts.values())
 
     modes = []
-    for num, count in counts.item():
+    for num, count in counts.items():
         if count == max_count:
             modes.append(num)
     
