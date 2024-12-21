@@ -9,7 +9,7 @@
 
 from includes.clear import clearSYS
 
-def encrypt():
+def decrypt():
   #TODO
   return " "
 
