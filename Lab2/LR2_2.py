@@ -26,7 +26,12 @@ def main():
     try:
       clearSYS()
 
-      fn = input("Input file name (sample.txt, empty.txt, or full path)\n:: ")
+      fn = input("Input file name (sample.txt, empty.txt, or full path, or 'X' to quit)\n:: ")
+
+      if fn.upper() == "X": 
+        print(YELLOW + "Quitting" + RESET + " program.")
+        return 0
+
       file_path = os.path.join("exp01/includes/",fn) if not os.path.isabs(fn) else fn
       with open(file_path, 'r') as file:
         data = file.readlines()
