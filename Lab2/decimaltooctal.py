@@ -25,6 +25,7 @@ def main():
   decimalNumber = int(input("Enter a decimal number: "))
   octalNumber = decimal_to_octal(decimalNumber)
   print(f"Decimal Number: {decimalNumber} ==> Octal Number: {octalNumber}")
+  return 0
 
 if __name__ == "__main__":
     main()
