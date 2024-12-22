@@ -9,7 +9,7 @@
 
 from includes.clear import clearSYS
 
-def decimaltooctal():
+def decimal_to_octal(decimalNum):
     if decimalNum == 0:
         return "0"
     octalNum = ""
@@ -22,10 +22,9 @@ def decimaltooctal():
 def main():
   clearSYS()
   
-  decimal_number = int(input("Enter a decimal number: "))
-  octal_number = decimal_to_octal(decimal_number)
-  print(f"Decimal Number: {decimal_number} ==> Octal Number: {octal_number}")
-  return 0
+  decimalNumber = int(input("Enter a decimal number: "))
+  octalNumber = decimal_to_octal(decimalNumber)
+  print(f"Decimal Number: {decimalNumber} ==> Octal Number: {octalNumber}")
 
 if __name__ == "__main__":
     main()
