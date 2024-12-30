@@ -9,13 +9,22 @@
 
 from includes.clear import clearSYS
 
-def decimaltooctal():
-  #TODO
-  return 0
+def decimal_to_octal(decimalNum):
+    if decimalNum == 0:
+        return "0"
+    octalNum = ""
+    while decimalNum > 0:
+        remainder = decimalNum % 8
+        octalNum = str(remainder) + octalNum # from rightmost digit to leftmost digit
+        decimalNum = decimalNum // 8
+    return octalNum
 
 def main():
-  clearSYS() 
-  #TODO
+  clearSYS()
+  
+  decimalNumber = int(input("Enter a decimal number: "))
+  octalNumber = decimal_to_octal(decimalNumber)
+  print(f"Decimal Number: {decimalNumber} ==> Octal Number: {octalNumber}")
   return 0
 
 if __name__ == "__main__":

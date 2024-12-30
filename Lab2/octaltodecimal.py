@@ -9,13 +9,25 @@
 
 from includes.clear import clearSYS
 
-def octaltodecimal():
-  #TODO
-  return 0
+def octal_to_decimal(octalNum):
+    decimalNumber = 0
+    power = 0 
+
+    for digit in reversed(octalNum):
+        if int(digit) >= 8:
+            raise ValueError("Invalid octal number")
+        decimalNumber += int(digit) * 8**power
+        power += 1
+
+    return decimalNumber
 
 def main():
-  clearSYS() 
-  #TODO
+  clearSYS()
+  
+  octalNumber = input("Enter an octal number: ")
+  decimalNumber = octal_to_decimal(octalNumber)
+  print(f"Octal number: {octalNumber} ==> Decimal Number: {decimalNumber}")
+
   return 0
 
 if __name__ == "__main__":
