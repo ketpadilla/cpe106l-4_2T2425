@@ -43,22 +43,28 @@ class Student(object):
         return "Name: " + self.name  + "\nScores: " + \
                " ".join(map(str, self.scores))
 
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: "Student") -> bool:
         """Compares two students for equality based on their names."""
         return self.name == other.name
 
-    def __lt__(self, other) -> bool:
+    def __lt__(self, other: "Student") -> bool:
         """Compares if this student's name is less than the other's."""
         return self.name < other.name
 
-    def __ge__(self, other) -> bool:
+    def __ge__(self, other: "Student") -> bool:
         """Compares if this student's name is greater than or equal to the other's."""
         return self.name >= other.name
 
-def randScore(student) -> None: 
+def randScore(student: Student) -> None: 
     """Sets random scores for the student."""
     for i in range(1, len(student.scores) + 1):
         student.setScore(i, random.randint(70, 100))
+
+def printStudentNames(students: Student) -> None:
+    """Prints the students' names."""
+    for index, student in enumerate(students, start=1):
+        print(f"{index}. {student.getName()}")
+    print()
 
 def main():
     """Testing comparison operators."""
@@ -67,22 +73,17 @@ def main():
     clearSYS()
 
     # Initialize students
-    names = ["Ken", "John", "Alice", "Bob", "Eve"]
-    student1 = Student(random.choice(names), 5)
-    randScore(student1)
+    names = ["Ken", "John", "Alice", "Bob", "Eve", "Habiba", "Tyler", "Nadia", "Water", "Kian", "Branch", "Rihanna", "Thompson", "Evelyn", "Bernard", "Hamish", "Benson", "Arran", "Stafford", "Jada", "Irwin", "Nannie", "Hill", "Hugh", "Hoover", "Poppie", "Duran", "Scarlet", "Holder", "Madiha", "Donaldson", "Stevie", "Baxter", "Myrtle", "Middleton", "Joshua", "Hess", "Mila", "Mercado", "Brendan", "Howard", "Kendra", "Walker", "Blanche", "Barnes", "Cameron", "Mullen", "Jamal", "Acevedo", "Maximus", "Rivers", "Chiara", "Finley", "Betsy", "Friedman", "Lincoln", "Blevins", "Jonah", "Beck", "Bailey", "Campbell", "Jaime", "Jefferson", "Jordan", "Paul"] # 65 random names for testing
 
-    student2 = Student(random.choice(names), 5)
-    randScore(student2)
+    studentCount = 10 # Number of students set for testing
+    subjects = 5 # Number of subjects set for testing
 
-    # Student details
-    print(student1, end="\n\n")
-    print(student2, end="\n\n")
+    # Generate random students with random scores
+    students = [Student(random.choice(names), subjects) for _ in range(studentCount)]
+    for student in students:
+        randScore(student)
 
-    # Comparisons
-    print("Comparisons by name:")
-    print(f"\tAre the students equal? {student1 == student2}")
-    print(f"\tIs student1 < student2? {student1 < student2}")
-    print(f"\tIs student1 >= to student2? {student1 >= student2}", end="\n\n")
+    #TODO: Shuffle and sort
 
 if __name__ == "__main__":
     main()
