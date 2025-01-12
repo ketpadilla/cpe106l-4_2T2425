@@ -11,19 +11,19 @@
     </coordinates>
     <panel_attributes>SavingsAccount
 --
-+name: str
-+pin: str
-+balance: float
-+RATE: float = 0.02
+- name: str
+- pin: str
+- balance: float
++ RATE: float = 0.02
 --
-+__init__(name: str, balance: float = 0.0)		
-+__str__(): str
-+getBalance(): float
-+getName(): str
-+getPin(): str
-+deposit(amount: float): None
-+withdraw(amount: float): str | None
-+computeInterest(): float
++ __init__(name: str, balance: float = 0.0)		
++ __str__() -&gt; str
++ getBalance() -&gt; float
++ getName() -&gt; str
++ getPin() -&gt; str
++ deposit(amount: float) -&gt; None
++ withdraw(amount: float) -&gt; str | None
++ computeInterest() -&gt; float
 </panel_attributes>
     <additional_attributes/>
   </element>
