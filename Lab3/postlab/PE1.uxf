@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>270</x><y>150</y><w>260</w><h>230</h></coordinates><panel_attributes>Student
+--
+- name: str
+- scores: list[int]
+--
++ __init__(name: str, number: int) -&gt; None
++ getName() -&gt; str
++ setScore(i: int, score: int) -&gt; None
++ getScore(i: int) -&gt; int
++ getAverage() -&gt; float
++ getHighScore() -&gt; int
++ __str__() -&gt; str
++ __eq__(other: object) -&gt; bool
++ __lt__(other: object) -&gt; bool
++ __ge__(other: object) -&gt; bool</panel_attributes><additional_attributes></additional_attributes></element></diagram>

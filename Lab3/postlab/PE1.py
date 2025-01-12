@@ -4,6 +4,9 @@
 
   Add three methods to the Student class that compare two Student objects. One method should test for equality. A second method should test for less than. The third method should test for greater than or equal to. In each case, the method returns the result of the comparison of the two students' names. Include a main function that tests all of the comparison operators.
 """
+ 
+from clear import clearSYS
+import random
 
 class Student(object):
     """Represents a student."""
@@ -40,13 +43,46 @@ class Student(object):
         return "Name: " + self.name  + "\nScores: " + \
                " ".join(map(str, self.scores))
 
+    def __eq__(self, other) -> bool:
+        """Compares two students for equality based on their names."""
+        return self.name == other.name
+
+    def __lt__(self, other) -> bool:
+        """Compares if this student's name is less than the other's."""
+        return self.name < other.name
+
+    def __ge__(self, other) -> bool:
+        """Compares if this student's name is greater than or equal to the other's."""
+        return self.name >= other.name
+
+def randScore(student) -> None: 
+    """Sets random scores for the student."""
+    for i in range(1, len(student.scores) + 1):
+        student.setScore(i, random.randint(70, 100))
+
 def main():
-    """A simple test."""
-    student = Student("Ken", 5)
-    print(student)
-    for i in range(1, 6):
-        student.setScore(i, 100)
-    print(student)
+    """Testing comparison operators."""
+
+    # Clear the screen
+    clearSYS()
+
+    # Initialize students
+    names = ["Ken", "John", "Alice", "Bob", "Eve"]
+    student1 = Student(random.choice(names), 5)
+    randScore(student1)
+
+    student2 = Student(random.choice(names), 5)
+    randScore(student2)
+
+    # Student details
+    print(student1, end="\n\n")
+    print(student2, end="\n\n")
+
+    # Comparisons
+    print("Comparisons by name:")
+    print(f"\tAre the students equal? {student1 == student2}")
+    print(f"\tIs student1 < student2? {student1 < student2}")
+    print(f"\tIs student1 >= to student2? {student1 >= student2}", end="\n\n")
 
 if __name__ == "__main__":
     main()
