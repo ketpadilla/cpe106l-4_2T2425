@@ -1,10 +1,8 @@
 """
-  LAB 03
-  PROGRAMMING PROBLEM 03
-
-  The str method of the Bank class returns a string containing the accounts in random order. Design and implement a change that causes the accounts to be placed in the string by order of name. (Hint: You will also have to define some methods in the SavingsAccount class.)
+File: bank.py
+This module defines the Bank class.
 """
-
+from fileinput import filename
 import pickle
 import random
 from savingsaccount import SavingsAccount
@@ -37,7 +35,8 @@ class Bank:
 
     def __str__(self):
         """Returns the string representation of the bank."""
-        return "\n".join(map(str, self.accounts.values()))
+        sorted_accounts = sorted(self.accounts.values())
+        return "\n".join(map(str, sorted_accounts))
 
     def makeKey(self, name, pin):
         """Returns a key for the account."""
@@ -116,17 +115,19 @@ def testAccount():
     print("Expect 500:", account.getBalance())
     print(account.withdraw(100000))
     print("Expect 500:", account.getBalance())
+  
+    # account1 = SavingsAccount("Ben", "555", 50)
 
 def main(number = 10, fileName = None):
     """Creates and prints a bank, either from
     the optional file name argument or from the optional
     number."""
-    testAccount()
-##    if fileName:
-##        bank = Bank(fileName)
-##    else:
-##        bank = createBank(number)
-##    print(bank)
+    #testAccount()
+    if fileName:
+        bank = Bank(fileName)
+    else:
+        bank = createBank(number)
+    print(bank)
 
 if __name__ == "__main__":
     main()
