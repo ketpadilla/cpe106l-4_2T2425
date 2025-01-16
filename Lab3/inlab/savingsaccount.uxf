@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>100</y>
+      <w>290</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>SavingsAccount
+--
++name: str
++pin: str
++balance: float
++RATE: float = 0.02
+--
++__init__(name: str, balance: float = 0.0)		
++__str__(): str
++getBalance(): float
++getName(): str
++getPin(): str
++deposit(amount: float): None
++withdraw(amount: float): str | None
++computeInterest(): float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
