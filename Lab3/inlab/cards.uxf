@@ -1,1 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>120</y>
+      <w>380</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Card
+--
+rank: int
+suit: str
+--
+__init__(rank: int, suit: str) -&gt; None
+__str__() -&gt; str</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>400</y>
+      <w>380</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Deck
+--
+cards: list[Card]
+--
+__init__() -&gt; None
+shuffle() -&gt; None
+deal() -&gt; Card or None
+__len__() -&gt; int
+__str__() -&gt; str</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
 
