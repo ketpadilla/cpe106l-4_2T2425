@@ -22,8 +22,8 @@ class TestOxoLogic(unittest.TestCase):
     
     def test_user_move_invalid(self):
         game = oxo_logic.newGame()
-        oxo_logic.userMove(game, 0)  # First move is valid
-        result = oxo_logic.userMove(game, 0)  # Second move on same cell
+        oxo_logic.userMove(game, 0)  
+        result = oxo_logic.userMove(game, 0)  
         self.assertEqual(result, "invalid", "Move on occupied cell should return 'invalid'")
     
     def test_computer_move(self):
