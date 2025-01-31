@@ -44,27 +44,21 @@ def main():
         print("Dropping tables...")
         execute_sql_file(DROP_TABLES_SQL, connection)
 
-        # Create and populate tables
         print("Creating tables...")
         execute_sql_file(CREATE_TABLES_SQL, connection)
 
-        # Example queries to check tables
         queries = {
             "list_tables": {
                 "query": "SELECT name FROM sqlite_master WHERE type='table';",
                 "description": "List of tables"
             },
-            "schema_renters": {
-                "query": "PRAGMA table_info(RENTERS);",
-                "description": "Schema of RENTERS table"
+            "all_renters": {
+                "query": "SELECT * FROM RENTERS;",
+                "description": "All Renters"
             },
-            "schema_properties": {
-                "query": "PRAGMA table_info(PROPERTIES);",
-                "description": "Schema of PROPERTIES table"
-            },
-            "schema_rental_agreements": {
-                "query": "PRAGMA table_info(RENTAL_AGREEMENTS);",
-                "description": "Schema of RENTAL_AGREEMENTS table"
+            "all_properties": {
+                "query": "SELECT * FROM PROPERTIES;",
+                "description": "All Properties"
             },
             "all_locations": {
                 "query": "SELECT * FROM LOCATION;",
@@ -85,22 +79,9 @@ def main():
             "all_service_requests": {
                 "query": "SELECT * FROM SERVICE_REQUEST;",
                 "description": "All Service Requests"
-            },
-            "all_renters": {
-                "query": "SELECT * FROM RENTERS;",
-                "description": "All Renters"
-            },
-            "all_properties": {
-                "query": "SELECT * FROM PROPERTIES;",
-                "description": "All Properties"
-            },
-            "all_rental_agreements": {
-                "query": "SELECT * FROM RENTAL_AGREEMENTS;",
-                "description": "All Rental Agreements"
             }
         }
 
-        # Execute and display queries
         print("Executing queries...")
         for key in queries:
             execute_query(connection, queries[key]["query"], queries[key]["description"])
