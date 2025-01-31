@@ -156,8 +156,8 @@ INSERT INTO RENTERS VALUES (1, 'Kristian', 'P', 'Padilla', 'Loyola Heights', 'Qu
 INSERT INTO RENTERS VALUES (2, 'Rhodave', 'O', 'Otayde', 'Forbes Park', 'Makati', 'NCR', '1220', '0917-765-4321', 'rhodave.otayde@example.com');
 
 -- Insert data into PROPERTIES
-INSERT INTO PROPERTIES VALUES (1, 'Beachfront Condo', 'Station 3', 'Boracay', 'Aklan', '5608', '101', 1200, 3, 2, 6, 1500.00);
-INSERT INTO PROPERTIES VALUES (2, 'Mountain Retreat', 'Mount Costa', 'Baguio', 'Benguet', '2600', '202', 900, 2, 1, 4, 1200.00);
+INSERT INTO PROPERTIES VALUES (1, 'Solmaris Beachfront', 'Station 3', 'Boracay', 'Aklan', '5608', '101', 1200, 3, 2, 6, 1500.00);
+INSERT INTO PROPERTIES VALUES (2, 'Solmaris Horizon Peaks', 'Mount Costa', 'Baguio', 'Benguet', '2600', '202', 900, 2, 1, 4, 1200.00);
 
 -- Insert data into RENTAL_AGREEMENTS
 INSERT INTO RENTAL_AGREEMENTS VALUES (1, 1, 'Kristian', 'P', 'Padilla', 'Loyola Heights', 'Quezon City', 'NCR', '1100', '0917-123-4567', '2025-03-01', '2025-03-08', 1500.00);
