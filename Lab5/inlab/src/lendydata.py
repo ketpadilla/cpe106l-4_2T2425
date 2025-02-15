@@ -6,6 +6,7 @@ and init and close functions for database control.
 '''
 
 import sqlite3 as sql
+import os
 
 db=None
 cursor = None
@@ -103,7 +104,7 @@ def initDB(filename = None):
     if not filename:
        filename = 'lendy.db'
     try:
-       db = sql.connect(filename)
+       db = sql.connect(os.path.join(os.path.dirname(__file__), filename))
        cursor = db.cursor()
        cursor.execute('PRAGMA Foreign_Keys=True')
     except:

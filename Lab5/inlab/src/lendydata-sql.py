@@ -1,4 +1,5 @@
 import sqlite3
+import os
 
 members = [
    ['Fred', 'fred@lendylib.org'],
@@ -39,7 +40,7 @@ insert into loan
 (itemID, BorrowerID, DateBorrowed, DateReturned ) 
 values (?, ?, date(?), date(?))'''
 
-db = sqlite3.connect('lendy.db')
+db = sqlite3.connect(os.path.join(os.path.dirname(__file__), 'lendy.db'))
 cur = db.cursor()
 
 cur.executemany(member_sql, members)
