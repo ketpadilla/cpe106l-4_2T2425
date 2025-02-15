@@ -1,5 +1,3 @@
-CaseStudy2/hoopsstatsapp.py
-
 """
 File: hoopstatsapp.py
 
@@ -27,9 +25,15 @@ def cleanStats(df):
 
 def main():
     """Creates the data frame and view and starts the app."""
-    frame = pd.read_csv("cleanbrogdonstats.csv")
-    frame = cleanStats(frame)  # Clean the data before passing it to the view
-    HoopStatsView(frame)
+    try:
+        frame = pd.read_csv("cleanbrogdonstats.csv")
+        print("CSV file loaded successfully.")
+        frame = cleanStats(frame)  # Clean the data before passing it to the view
+        print("Data cleaned successfully.")
+        print(frame.head())  # Print the first few rows of the DataFrame for verification
+        HoopStatsView(frame)
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
